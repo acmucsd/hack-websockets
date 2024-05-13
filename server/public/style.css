@@ -14,6 +14,13 @@ h1 {
     color: white;
 }
 
+p {
+    padding-left: 1rem;
+    position:absolute;
+    bottom:0;
+    right:2rem;
+}
+
 form {
     display: flex;
     justify-content: right;
@@ -52,4 +59,5 @@ input {
     min-width: 80%;
     overflow-wrap: normal;
     border-radius: 10px;
+    position: relative;
 }
