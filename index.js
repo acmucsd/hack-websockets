@@ -12,7 +12,6 @@ const io = new Server(httpServer, {
 
 
 io.on('connection', socket => {
-    console.log(`User ${socket.id} connected`)
 
     // Upon connection - only to user 
     socket.emit('message', "Welcome to ACM's Chatroom")
@@ -21,8 +20,8 @@ io.on('connection', socket => {
     socket.broadcast.emit('message', `User ${socket.id.substring(0, 5)} connected`)
 
 //-------- Activity 1 --------
+    //When a message event is activated, the message should be broadcasted to all connected users
     socket.on('message', data => {
-        console.log(data)
         io.emit('message', `${socket.id.substring(0, 5)}: ${data}`)
     })
 //----------------------------
@@ -30,12 +29,12 @@ io.on('connection', socket => {
 //-------- Activity 3 --------
     // When user disconnects - to all others 
     socket.on('disconnect', () => {
-        socket.broadcast.emit('message', `User ${socket.id.substring(0, 5)}} disconnected`)
+        // Hint: Refer to how we emit the connection message
     })
 
-    // Listen for activity 
+    // Listen for activity event
     socket.on('activity', (name) => {
-        socket.broadcast.emit('activity', name)
+        // Hint: Pay attention to the parameter
     })
 //----------------------------
 })
