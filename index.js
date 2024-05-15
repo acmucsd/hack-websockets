@@ -14,7 +14,7 @@ const io = new Server(httpServer, {
 io.on('connection', socket => {
 
     // Upon connection - only to user 
-    socket.emit('message', "Welcome to ACM's Chatroom")
+    socket.emit('message', `Welcome to ACM's Chatroom`)
 
     // Upon connection - to all other user connected to the server
     socket.broadcast.emit('message', `User ${socket.id.substring(0, 5)} connected`)
@@ -22,20 +22,22 @@ io.on('connection', socket => {
 //-------- Activity 1 --------
     // When a message event is activated, the message should be broadcasted to all connected users
     // You can format how the message is written however you'd like, we used the formatting [User ID]: [Message]
-    socket.on('message', data => {
-        // Hint: Emphasis of ALL connected users
-    })
+    
+    // Hint: If your stuck use slide 23 for reference
+    
 //----------------------------
 
 //-------- Activity 3 --------
     // When user disconnects - to all others 
     socket.on('disconnect', () => {
         // Hint: Refer to how we emit the connection message
+        //socket.broadcast.emit('message', `User ${socket.id.substring(0, 5)} disconnected`)
     })
 
     // Listen for activity event
     socket.on('activity', (name) => {
         // Hint: Pay attention to the parameter
+        // socket.broadcast.emit('message', `${name} is typing...`)
     })
 //----------------------------
 })
