@@ -22,9 +22,7 @@ io.on('connection', socket => {
 //-------- Activity 1 --------
     // When a message event is activated, the message should be broadcasted to all connected users
     // You can format how the message is written however you'd like, we used the formatting [User ID]: [Message]
-    socket.on('message', (data) => {
-        io.emit('message', `${socket.id.substring(0, 5)}: ${data}`)
-    })
+
     // Hint: If your stuck use slide 23 for reference
     
 //----------------------------
@@ -33,13 +31,11 @@ io.on('connection', socket => {
     // When user disconnects - to all others 
     socket.on('disconnect', () => {
         // Hint: Refer to how we emit the connection message
-        //socket.broadcast.emit('message', `User ${socket.id.substring(0, 5)} disconnected`)
     })
 
     // Listen for activity event
     socket.on('activity', (name) => {
         // Hint: Pay attention to the parameter
-        // socket.broadcast.emit('message', `${name} is typing...`)
     })
 //----------------------------
 })
