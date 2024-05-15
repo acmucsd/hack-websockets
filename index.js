@@ -16,13 +16,14 @@ io.on('connection', socket => {
     // Upon connection - only to user 
     socket.emit('message', "Welcome to ACM's Chatroom")
 
-    // Upon connection - to all others 
+    // Upon connection - to all other user connected to the server
     socket.broadcast.emit('message', `User ${socket.id.substring(0, 5)} connected`)
 
 //-------- Activity 1 --------
-    //When a message event is activated, the message should be broadcasted to all connected users
+    // When a message event is activated, the message should be broadcasted to all connected users
+    // You can format how the message is written however you'd like, we used the formatting [User ID]: [Message]
     socket.on('message', data => {
-        io.emit('message', `${socket.id.substring(0, 5)}: ${data}`)
+        // Hint: Emphasis of ALL connected users
     })
 //----------------------------
 

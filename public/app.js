@@ -4,14 +4,15 @@ const activity = document.querySelector('.activity')
 const msgInput = document.querySelector('input')
 
 //-------- Activity 2 --------
+// We want to send back the message we received from the single client, back to the server
 function sendMessage(e) {
-    e.preventDefault()  // prevents the page from reloading after message is sent
+    e.preventDefault()  // Prevents the page from reloading after message is sent
     const input = document.querySelector('input')
     if (input.value) {
-        // Emit name of the event that occurred and the input received
+        // Hint: Emphasis on the SINGLE client
         input.value = ""
     }
-    input.focus()
+    input.focus()      // Sets focus back to the input field
 }
 //----------------------------
 
