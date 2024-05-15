@@ -23,7 +23,7 @@ io.on('connection', socket => {
     // When a message event is activated, the message should be broadcasted to all connected users
     // You can format how the message is written however you'd like, we used the formatting [User ID]: [Message]
 
-    // Hint: If your stuck use slide 23 for reference
+    // Hint: If your stuck use slide 24 for reference
     
 //----------------------------
 
