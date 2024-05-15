@@ -25,6 +25,7 @@ form {
     display: flex;
     justify-content: right;
     gap: 4px;
+    border-style: none;
 
 }
 
@@ -36,19 +37,26 @@ ul {
 }
 
 button {
-    border-style: solid;
-    border-radius: 10px;
-    padding: 10px;
+    border: 1px solid #4d321d;
+    border-radius: .5rem;
+    padding: .1rem;
     cursor: pointer;
-    width: 15%
+    width: 15%;
+    background-color: #00000046;
 }
-input {
+input[type="text"] {
     text-align: center;
-    border-style: solid;
+    border: 1px solid #a56a2f;
     border-radius: 10px;
     padding: 10px;
     cursor: text;
     width: 85%;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #4d321d;
+    border:1px solid #754e28;
 }
 
 .chat-history{
