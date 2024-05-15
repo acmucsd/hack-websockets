@@ -21,6 +21,7 @@ document.querySelector('form')
 
 // Listen for messages sent back from server
 socket.on("message", (data) => {
+    activity.textContent = ""
     const li = document.createElement('li')
     li.textContent = data
     document.querySelector('ul').appendChild(li)    //Adds it to the list of messages 
@@ -31,10 +32,11 @@ msgInput.addEventListener('keypress', () => {
 })
 
 // Listens for activity event to occur
+let activityTimer
 socket.on("activity", (name) => {
-    let activityTimer
     activity.textContent = `${name} is typing...`
 
+    // After three seconds of no keys being pressed, activity.textContent is cleared
     clearTimeout(activityTimer)
     activityTimer = setTimeout(() => {
         activity.textContent = ""
