@@ -28,12 +28,12 @@ socket.on("message", (data) => {
 })
 // When a key is pressed, sends back name of event and ID of socket back to server
 msgInput.addEventListener('keypress', () => {   
-    socket.emit('activity', socket.id.substring(0, 5))
+    socket.emit("typing", socket.id.substring(0, 5))
 })
 
 // Listens for activity event to occur
 let activityTimer
-socket.on("activity", (name) => {
+socket.on("typing", (name) => {
     activity.textContent = `${name} is typing...`
 
     // After three seconds of no keys being pressed, activity.textContent is cleared

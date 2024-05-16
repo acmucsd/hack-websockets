@@ -25,6 +25,7 @@ io.on('connection', socket => {
 
     // Hint: If your stuck use slide 24 for reference
     
+    
 //----------------------------
 
 //-------- Activity 3 --------
@@ -34,7 +35,7 @@ io.on('connection', socket => {
     })
 
     // Listen for activity event
-    socket.on('activity', (name) => {
+    socket.on('typing', (name) => {
         // Hint: Pay attention to the parameter
     })
 //----------------------------
